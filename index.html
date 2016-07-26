@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html>
+<!--Jimena Armijos -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ASSIGNMENT 6</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <!--<link rel="stylesheet" href="main.css">-->
+        <link rel="stylesheet" href="custom.css">       
+              
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>        
+             
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+         
+    </head>
+    <body>
+     
+    <div class="container">
+      <div class="header clearfix">
+        <img src="img/logo.jpg" class="img-responsive" alt="Responsive image"> 
+      </div>
+      <img src="img/pizza.jpg" class="img-responsive" alt="Responsive image">
+      <div class="jumbotron">
+          
+        <h1>Little Italy Pizzeria</h1>
+        <p class="lead">San Diego’s only restaurant specializing in traditional Naples style wood fired pizza. Complimenting our menu is a unique selection of  moderately priced domestic and Italian wine and beer.  All graciously served in a warm, friendly and relaxing atmosphere.</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Order Your Pizza Below</a></p>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          
+        </div>
+      </div>
+
+     <form name="form" role="form" class="form-horizontal">    
+        <div id="delivery_info">
+            <fieldset id="field1">
+            <legend>Delivery Information</legend>
+                <div class="form-group">
+                    <label for="name" class="control-label col-sm-3">Delivery Name:</label>
+                    <div class="col-sm-6">
+                        <input type="text" id="delivery-name" class="form-control" name="name" placeholder="Your Name">   
+                    </div>        
+                    <div class="col-sm-3">
+                        <label id="nameMsgID" class="control-label col-sm-10 redtext hidethis">Enter your name:</label>
+                    </div>
+                </div>
+                        
+                <div class="form-group">
+                    <label for="address-type" id="alt-addr-type" class="control-label col-sm-3">Address Type:</label>
+                    <div class="col-sm-4">
+                        <select id="address-type" name="addtype" class="form-control">
+                            <option value="house">House</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="business">Business</option>
+                            <option value="campus">Campus</option>
+                            <option value="hotel">Hotel</option>
+                            <option value="dorm">Dorm</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <input id="other" type="text" name="other" class="form-control hidethis" placeholder="Other Address Type">
+                    </div>
+                </div>
+                        
+                <div class="form-group">
+                    <label for="delivery_street_address" class="control-label col-sm-3">Street Address:</label>
+                    <div class="col-sm-6">
+                        <input id="streetID" type="text" name="delivery_street_address" class="form-control" placeholder="Street Address">
+                    </div>
+                    <div class="col-sm-3">
+                        <label id="streetMsgID" class="control-label col-sm-10 redtext hidethis">Enter your street</label>
+                    </div>
+                </div>
+                        
+                <div class="form-group">
+                    <label for="delivery_optional_apt" class="control-label col-sm-3">Apt,Suite,Room:</label>
+                    <div class="col-sm-6">
+                        <input id="aptnoID" type="text" name="delivery_optional_apt" class="form-control" placeholder="Apt, Suite, or Room No">
+                    </div>
+                    <div class="col-sm-3">
+                        <label id="aptnoMsgID" class="control-label col-sm-10 redtext hidethis">Enter Apt,Suite,Room</label>
+                    </div>  
+                </div>
+                        
+                <div class="form-group">
+                    <label for="delivery_city" class="control-label col-sm-3">City:</label>
+                    <div class="col-sm-6">
+                        <input id="cityID" type="text" name="delivery_city" class="form-control" placeholder="City">
+                    </div>
+                    <div  class="col-sm-3">
+                        <label id="cityMsgID" class="control-label col-sm-10 redtext hidethis">Enter City</label>
+                    </div>
+                </div>
+                        
+                <div class="form-group">
+                    <label for="delivery_state" class="control-label col-sm-3">State:</label>
+                    <div class="col-sm-6">
+                       <input id="stateID" type="text" name="delivery_state" class="form-control" placeholder="State">
+                    </div>
+                    <div  class="col-sm-3">
+                       <label id="stateMsgID" class="control-label col-sm-10 redtext hidethis">Enter State</label>
+                    </div>  
+                </div>
+                        
+                <div class="form-group">
+                    <label for="delivery_zip" class="control-label col-sm-3">Zip Code:</label>
+                    <div class="col-sm-6">
+                        <input id="zipcodeID" type="text" name="delivery_zip" class="form-control" placeholder="Zip Code">
+                    </div>
+                    <div  class="col-sm-3">
+                        <label id="zipMsgID" class="control-label col-sm-10 redtext hidethis">Enter Zipcode</label>
+                    </div> 
+                </div>
+                        
+                <div class="form-group">
+                    <label for="phone" class="control-label col-sm-3">Phone Number:</label>
+                    <div class="col-sm-6">
+                        <input id="phoneID" type="text" name="phone" class="form-control" placeholder="###-###-####">
+                    </div>
+                    <div  class="col-sm-3">
+                        <label id="phoneMsgID" class="control-label col-sm-10 redtext hidethis">Enter Phone Number</label>
+                    </div>         
+                </div>
+                        
+                <div class="form-group">
+                    <label for="email" class="control-label col-sm-3">Email:</label>
+                    <div class="col-sm-6">
+                        <input id="emailID" type="text" name="email" class="form-control" placeholder="yourname@domain.com">
+                    </div>
+                    <div  class="col-sm-3">
+                        <label id="emailMsgID" class="control-label col-sm-10 redtext hidethis">Enter Email Address</label>
+                    </div>
+                </div>
+                
+            </fieldset>       
+            <button id="btnVerifyID" type="button">Verify Delivery Information</button>    
+        </div>
+ 
+        <div id="billing_info" class="form-group mainhide">
+            <fieldset id="field2">
+            <legend>Billing Information</legend>
+                <div class="form-group">
+                    <input  type="checkbox" id="billing_info_sameID" name="bill_info_same">
+                    <label for="bill_info_same" class="control-label">Same as delivery information</label>         
+                </div>
+                <div class="form-group">
+                    <label for="bill_name" class="control-label col-sm-3">Name:</label>
+                    <div class="col-sm-6">
+                        <input id="billNameID" type="text" name="bill_name" class="form-control" placeholder="Your Name" >
+                    </div>
+                    <div class="col-sm-3">
+                        <label id="nameMsg2ID" class="control-label col-sm-10 redtext hidethis">Enter your name</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">    
+                    <label for="bill_street_address" class="control-label col-sm-3">Street Address:</label>
+                    <div class="col-sm-6">
+                        <input id="billStreetID" type="text" name="bill_street_address" class="form-control" placeholder="Address">
+                    </div>
+                    <div class="col-sm-3">
+                        <label id="streetMsg2ID" class="control-label col-sm-10 redtext hidethis">Enter your street</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!--billing code-->    
+                    <label for="bill_optional_apt" class="control-label col-sm-3">Apt,Suite,Room:</label>   
+                    <div class="col-sm-6">
+                        <input id="billAptNoID" type="text" name="bill_optional_apt" class="form-control" placeholder="apt ste room">
+                    </div>  
+                    <div class="col-sm-3">
+                        <label id="aptnoMsg2ID" class="control-label col-sm-10 redtext hidethis">Enter Apt,Suite,Room</label>
+                    </div> 
+                </div>
+                <div class="form-group">
+                    <label for="bill_city" class="control-label col-sm-3">City:</label>
+                    <div class="col-sm-6">
+                        <input id="billCityID" type="text" name="bill_city" class="form-control" placeholder="City">
+                    </div>
+                    <div  class="col-sm-3">
+                        <label id="cityMsg2ID" class="control-label col-sm-10 redtext hidethis">Enter City</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bill_state" class="control-label col-sm-3">State:</label>
+                    <div class="col-sm-6">
+                        <input id="billStateID" type="text" name="bill_state" class="form-control" placeholder="State">
+                    </div>
+                    <div  class="col-sm-3">
+                        <label id="stateMsg2ID" class="control-label col-sm-10 redtext hidethis">Enter State</label>
+                    </div> 
+                </div>
+                <div class="form-group">
+                    <label for="bill_zip" class="control-label col-sm-3">Zip Code:</label>
+                    <div class="col-sm-6">
+                        <input id="billZipCodeID" type="text" name="bill_zip" class="form-control" placeholder="Zip Code">
+                    </div>
+                    <div  class="col-sm-3">
+                        <label id="zipMsg2ID" class="control-label col-sm-10 redtext hidethis" redtext>Enter Zipcode</label>
+                    </div> 
+                </div>
+                <div  class="form-group">
+                    <label for="cc_number" class="control-label col-sm-3">Credit Card Number:</label>
+                    <div id="cc_number" class="col-sm-6">
+                        <input type="text" name="cc_number" id="ccNumberID" class="form-control">
+                    </div>
+                    <div  class="col-sm-3">
+                        <label id="ccMsg2ID" class="control-label col-sm-10 redtext hidethis" redtext>Enter valid card no</label>
+                    </div> 
+                </div>
+                <div class="form-group">
+                    <label for="cvc" class="control-label col-sm-3">CVC Code</label>
+                    <div class="col-sm-6">
+                        <input id="cvcID" type="text" name="cvc" class="form-control" placeholder = "123">
+                    </div>
+                    <div  class="col-sm-3">
+                        <label id="cvcMsg2ID" class="control-label col-sm-10 redtext hidethis" redtext>Enter CVC code</label>
+                    </div> 
+                </div>
+                <div class="form-group">
+                <label for="bill_month" class="control-label col-sm-3">Expiration</label>
+                    <div class="col-sm-4">
+                        <select name="bill_month" class="form-control">
+                            <option value="1">01-Jan</option>
+                            <option value="2">02-Feb</option>
+                            <option value="3">03-Mar</option>
+                            <option value="4">04-Apr</option>
+                            <option value="5">05-May</option>
+                            <option value="6">06-Jun</option>
+                            <option value="7">07-Jul</option>
+                            <option value="8">08-Aug</option>
+                            <option value="9">09-Sep</option>
+                            <option value="10">10-Oct</option>
+                            <option value="11">11-Nov</option>
+                            <option value="12">12-Dec</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <select name="bill_year" class="form-control">
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+            <button id="btnVerifyBillingID" type="button">Verify Billing Information</button> 
+        </div> 
+          
+        <div id="build-order" class="col-lg-12">
+            <div class="form-group">
+                <fieldset id="field3">
+                    <legend>Build Your Order</legend>
+                    <div id="doughTypeID" class="form-group">
+                        <label for="radio" class="control-label col-sm-3">Dough Type:</label>
+                        <div id="doughSelectionDivID" class="col-sm-9">
+                <input id="htID" type="radio" name="dough" value="hand tossed"   >&nbsp; Hand Tossed<br>
+                <input id="tcID" type="radio" name="dough" value="thin crust"    >&nbsp; Thin Crust<br>
+                <input id="nyID" type="radio" name="dough" value="new york style">&nbsp; New York Style<br>
+                <input id="gfID" type="radio" name="dough" value="gluten free"   >&nbsp; Gluten Free>
+                        </div>
+                    </div>
+                    <div id="dough" class="form-group mainhide">
+                        <label for="pizza_size" class="control-label col-sm-3">Available Sizes:</label>
+                        <div class="col-sm-8">
+                            <select name="pizza_selection" id="doughID" class="form-control">
+                                <!--options are auto filled from dough selection above-->
+                            </select>
+                        </div>
+                    </div>
+                    <div id="cheese" class="form-group mainhide">
+                        <label for="cheese" class="control-label col-sm-3">Cheese:</label>
+                        <div class="col-sm-8">
+                        <select id="cheeseID" name="cheese" class="form-control">
+                            <option value="0.00">Light: no charge</option>
+                            <option value="0.00" selected>Normal: no charge</option>
+                            <option value="2.99">Extra: +$2.99</option>
+                            <option value="3.99">Double: +$3.99</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div id="sauce" class="form-group mainhide">
+                        <label for="sauce" class="control-label col-sm-3">Sauce:</label>
+                        <div class="col-sm-8">
+                        <select id="sauceID" name="sauce" class="form-control">
+                            <option value="0.00" selected>Regular Tomato: no charge</option>
+                            <option value="0.99">Hearty Tomato: +$.99</option>
+                            <option value="1.99">BBQ Sauce: +$1.99</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div id="toppings" class="form-group mainhide">
+                        <label for="toppings" class="control-label col-sm-6">Toppings: (Each topping is $.99 extra)</label>
+                        <div id="toppingslistID" class="col-sm-12"><br> 
+                <input type="checkbox" onchange="addUpOrder()" name="toppings" value="0.99" >&nbsp;Pepperoni 
+                <input type="checkbox" onchange="addUpOrder()" name="toppings" value="0.99" >&nbsp;Sausage 
+                <input type="checkbox" onchange="addUpOrder()" name="toppings" value="0.99" >&nbsp;Ham
+                <input type="checkbox" onchange="addUpOrder()" name="toppings" value="0.99" >&nbsp;Bacon 
+                <input type="checkbox" onchange="addUpOrder()" name="toppings" value="0.99" >&nbsp;Salami 
+                <input type="checkbox" onchange="addUpOrder()" name="toppings" value="0.99" >&nbsp;Peppers 
+                <input type="checkbox" onchange="addUpOrder()" name="toppings" value="0.99" >&nbsp;Olives 
+                <input type="checkbox" onchange="addUpOrder()" name="toppings" value="0.99" >&nbsp;Jalapenos 
+                <input type="checkbox" onchange="addUpOrder()" name="toppings" value="0.99" >&nbsp;Mushrooms 
+                <input type="checkbox" onchange="addUpOrder()" name="toppings" value="0.99" >&nbsp;Pineapple 
+                <input type="checkbox" onchange="addUpOrder()" name="toppings" value="0.99" >&nbsp;Onion
+                        </div>
+                    </div>
+                </fieldset>
+             </div>
+         </div>
+                 
+         <div class="col-lg-12">
+            <label id="labelCostID">Pizza Cost: </label>
+            <input id="totalCostID" type="text" value="Total Cost: ">
+            <input id="form-submit" type="button" class="form control btn-lg" value="Place Your Order">   
+            <input id="orderPlacedID" type="text" value="">  
+         </div>
+
+        </form>
+        
+        <footer class="footer">
+          <p>&copy; 2016 Company, Inc.</p>
+        </footer>
+
+    </div> <!-- /container -->    
+        
+                              
+        <script>
+        //validation functions...
+        
+        //validates all digits
+        function isAllDigits(value){
+           var isnum = /^\d+$/.test(value);
+           return isnum
+        }
+        
+        //Name validator      
+        function validateName(name) {
+            var nameRegex = /^[a-zA-Z ]{2,30}$/; 
+            if (nameRegex.test(name) === true) {
+                return true;
+            } else {  
+                return false;
+            }
+        }
+            
+        //State validator  
+        function validateState(state) {
+            var stateRegex = /^([a-zA-Z]){2}$/;
+            if ((bValidState = stateRegex.test(state)) === true) {
+                return true;            
+            } else {
+                return false;
+            }
+        }                                           
+        //phone number validator
+        function validateUSPhoneNumber(phoneNumber) {
+           var regExp = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
+           var phone = phoneNumber.match(regExp);
+           if (phone) {
+              return true;
+           }
+           return false;
+        }
+        //usage: var result = validateUSPhoneNumber("858-414-6119");       
+        
+        //email address validator   
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }   
+        //usage: var validationResult = validateEmail("junk@gmail.com");       
+            
+        //zip code validator
+        function isValidUSZip(sZip) {
+           return /^\d{5}(-\d{4})?$/.test(sZip);
+        }  
+        //usage: var result = isValidUSZip(92116);      
+            
+        //credit card number validation with Luhn...
+        function validCreditCardNo(value) {
+            //window.alert("validCreditCardNo(value) fired!");
+            // accept only digits, dashes or spaces
+	        if (/[^0-9-\s]+/.test(value)) return false;
+	        // The Luhn Algorithm...
+	        var nCheck = 0, nDigit = 0, bEven = false;
+	        value = value.replace(/\D/g, "");
+	        for (var n = value.length - 1; n >= 0; n--) {
+		        var cDigit = value.charAt(n),
+			    nDigit = parseInt(cDigit, 10);
+		        if (bEven) {
+			       if ((nDigit *= 2) > 9) nDigit -= 9;
+		        }
+		        nCheck += nDigit;
+		        bEven = !bEven;
+	        }
+	        return (nCheck % 10) == 0;
+         }    
+         //usage: var result = validCreditCardNo("9999-9999-9999-9999");      
+            
+            
+            
+        document.getElementById("htID").onclick = buildHtList;   
+        document.getElementById("tcID").onclick = buildTcList; 
+        document.getElementById("nyID").onclick = buildNyList;     
+        document.getElementById("gfID").onclick = buildGfList; 
+        
+        //call dispOrderPlacedMsg with the Place Order button...
+        document.getElementById("form-submit").onclick = dispOrderPlacedMsg;    
+        function dispOrderPlacedMsg(){ orderPlacedID.value = "THANKS, SUBMITTED!"; }  
+                 
+        function buildHtList(){
+            clearSizeCostList();
+            var arrHandTossedSizeCostText = ["Small ($9.99)","Medium ($12.99)","Large ($14.99)"];
+            var arrHandTossedSizeCostValue = ["9.99", "12.99", "14.99" ];
+            selectList = document.getElementById("doughID");
+            for (var i = 0; i < arrHandTossedSizeCostText.length; i++) {
+                var option = document.createElement("option");
+                option.text = arrHandTossedSizeCostText[i];
+                option.value = arrHandTossedSizeCostValue[i];
+                selectList.appendChild(option);
+            }
+            addUpOrder();
+        }
+        function buildTcList(){
+            clearSizeCostList();
+            var arrThinCrustSizeCostText = ["Medium ($11.99)","Large ($13.99)"];
+            var arrThinCrustSizeCostValue = ["11.99", "13.99"];
+            selectList = document.getElementById("doughID");
+            for (var i = 0; i < arrThinCrustSizeCostText.length; i++) {
+                var option = document.createElement("option");
+                option.text = arrThinCrustSizeCostText[i];
+                option.value = arrThinCrustSizeCostValue[i];
+                selectList.appendChild(option);
+            }
+            addUpOrder();
+        }   
+        function buildNyList(){
+            clearSizeCostList();
+            var arrNewYorkStyleSizeCostText = ["Large ($16.99)","Extra Large ($19.99)"];
+            var arrNewYorkStyleSizeCostValue = ["16.99", "19.99"];
+            selectList = document.getElementById("doughID");
+            for (var i = 0; i < arrNewYorkStyleSizeCostText.length; i++) {
+                var option = document.createElement("option");
+                option.text = arrNewYorkStyleSizeCostText[i];
+                option.value = arrNewYorkStyleSizeCostValue[i];
+                selectList.appendChild(option);
+            }
+            addUpOrder();
+        }    
+        function buildGfList(){
+            clearSizeCostList();
+            var arrGlutenFreeSizeCostText = ["Small ($10.99)"];
+            var arrGlutenFreeSizeCostValue = ["10.99"];
+            selectList = document.getElementById("doughID");
+            for (var i = 0; i < arrGlutenFreeSizeCostText.length; i++) {
+                var option = document.createElement("option");
+                option.text = arrGlutenFreeSizeCostText[i];
+                option.value = arrGlutenFreeSizeCostValue[i];
+                selectList.appendChild(option);
+            }
+            addUpOrder();
+        }    
+        function clearSizeCostList(){
+           var selectBox = document.getElementById("doughID");
+           var i;
+           for(i = selectBox.options.length - 1 ; i >= 0 ; i--)
+           {
+              selectBox.remove(i);
+           }
+        }
+          
+        
+        //calculateID.addEventListener("click", addUpOrder);    
+        //need a click=addUpOrder on each option value..    
+        var doughOptionEL = document.getElementById("doughID");    
+        doughOptionEL.addEventListener("change", addUpOrder);
+        var cheeseOptionEL = document.getElementById("cheeseID");    
+        cheeseOptionEL.addEventListener("change", addUpOrder);
+        var sauceOptionEL = document.getElementById("sauceID");    
+        sauceOptionEL.addEventListener("change", addUpOrder);
+               
+        var gTotalCost = 0.00;    
+        function addUpOrder(){
+           gTotalCost = 0.00;     
+           document.getElementById("totalCostID").value = "Total Cost: $ "; 
+           //tally up the dough cost...  
+           var doughCost = doughOptionEL.options[doughOptionEL.selectedIndex].value;
+           gTotalCost += Number(doughCost);
+           //tally up the cheese cost...   
+           var cheeseCost = cheeseOptionEL.options[cheeseOptionEL.selectedIndex].value;
+           gTotalCost += Number(cheeseCost);
+           //tally up the sauce cost...    
+           var sauceCost = sauceOptionEL.options[sauceOptionEL.selectedIndex].value;
+           gTotalCost += Number(sauceCost); 
+           //tally up the toppings cost...
+           var toppingsCost = .99 * toppingCount(); 
+           gTotalCost += toppingsCost;
+           //transer total cost to total cost text box...    
+           document.getElementById("totalCostID").value += gTotalCost.toFixed(2);
+        }
+        //function to tally up total number of toppings...
+        function toppingCount(){
+           var inputElems = document.getElementsByTagName("input");
+           var count = 0;
+           for (var i=0; i<inputElems.length; i++) {
+              if (inputElems[i].type === "checkbox" && inputElems[i].checked === true){
+                 count++;
+              }
+           }
+           return count;
+        } 
+            
+
+           
+        var otherElem = document.getElementById("other");
+        var selectList = document.getElementById("address-type");
+        selectList.addEventListener("change", selectMade);
+        btnVerifyID.addEventListener("click", verifyForm);
+        btnVerifyBillingID.addEventListener("click", verifyBillingForm);
+        
+        var billingInfoSameEL = document.getElementById("billing_info_sameID");
+        //problem with next line...
+        billingInfoSameEL.addEventListener("change", checkBoxClicked); 
+        
+        //get references to delivery fields...
+        var nameEL = document.getElementById("delivery-name");
+        //skipping over address-type field...
+        var streetEL  = document.getElementById("streetID");
+        var aptnoEL   = document.getElementById("aptnoID");
+        var cityEL    = document.getElementById("cityID");
+        var stateEL   = document.getElementById("stateID");
+        var zipcodeEL = document.getElementById("zipcodeID");
+        var phoneEL   = document.getElementById("phoneID");
+        var emailEL   = document.getElementById("emailID");  
+        
+        //get references to billing fields...
+        var nameBillEL = document.getElementById("billNameID");
+        //
+        var streetBillEL  = document.getElementById("billStreetID");
+        var aptnoBillEL   = document.getElementById("billAptNoID");
+        var cityBillEL    = document.getElementById("billCityID");
+        var stateBillEL   = document.getElementById("billStateID");
+        var zipcodeBillEL = document.getElementById("billZipID");
+        
+        function checkBoxClicked(){
+            if (this.checked == true){  
+               nameBillEL.value    = nameEL.value;
+                // alnernate xfer here...
+               streetBillEL.value  = streetEL.value;
+               aptnoBillEL.value   = aptnoEL.value;
+               cityBillEL.value    = cityEL.value;
+               stateBillEL.value   = stateEL.value;
+               zipcodeBillEL.value = zipcodeEL.value;   
+            }else{
+               nameBillEL.value    = "";
+                // alnernate xfer here...
+               streetBillEL.value  =  "";
+               aptnoBillEL.value   =  "";
+               cityBillEL.value    =  "";
+               stateBillEL.value   =  "";
+               zipcodeBillEL.value =  ""; 
+            }
+        }
+
+        var bOptionSelectionMade = false;
+        function selectMade(){
+            bOptionSelectionMade = true;    
+            if (selectList.value == "other"){
+                otherElem.classList.remove("hidethis"); 
+            }else{
+                otherElem.classList.add("hidethis");    
+            }
+        } 
+            
+        function verifyForm(){
+           //validate the name 
+           var bValidName = validateName(nameEL.value);
+           //validate the state
+           var bValidState = validateState(stateEL.value);
+           //validate the zip code
+           var bValidZipCode = false;
+           bValidZipCode = isValidUSZip(zipcodeID.value);
+           //validate the phone number
+           var bValidPhoneNumber = false;
+           bValidPhoneNumber = validateUSPhoneNumber(phoneID.value); 
+           //validate the email address
+           var bValidEmailAddr = false;
+           bValidEmailAddr = validateEmail(emailID.value); 
+            
+           if (  ( bValidName ) 
+              //&& (bOptionSelectionMade) 
+              && (streetEL.value.length  > 0 ) 
+              && (aptnoEL.value.length   > 0 )  
+              && (cityEL.value.length    > 0 ) 
+              && ( bValidState ) 
+              && ( bValidZipCode ) 
+              && ( bValidPhoneNumber ) 
+              && ( bValidEmailAddr ) 
+              )    
+           {  
+              nameMsgID.classList.add("hidethis");  
+              streetMsgID.classList.add("hidethis"); 
+              aptnoMsgID.classList.add("hidethis");  
+              cityMsgID.classList.add("hidethis");    
+              stateMsgID.classList.add("hidethis"); 
+              zipMsgID.classList.add("hidethis");  
+              phoneMsgID.classList.add("hidethis"); 
+              emailMsgID.classList.add("hidethis"); 
+               
+              //window.alert("Form validated");   
+           }else{
+              //window.alert("Form NOT validated"); 
+              if (!bValidName) {
+                 nameMsgID.classList.remove("hidethis");
+              }else{
+                 nameMsgID.classList.add("hidethis"); 
+              } 
+              if (streetEL.value.length < 1) {
+                 streetMsgID.classList.remove("hidethis");     
+              }else{
+                 streetMsgID.classList.add("hidethis"); 
+              }     
+              if (aptnoEL.value.length < 1) {
+                 aptnoMsgID.classList.remove("hidethis");     
+              }else{
+                 aptnoMsgID.classList.add("hidethis"); 
+              }  
+              if (cityEL.value.length < 1) { 
+                 cityMsgID.classList.remove("hidethis");    
+              }else{
+                 cityMsgID.classList.add("hidethis"); 
+              }   
+              if (!bValidState) {
+                 var stateMsgEL = document.getElementById("stateMsgID");
+                 stateMsgEL.classList.remove("hidethis");
+              }else{
+                 var stateMsgEL2 = document.getElementById("stateMsgID");
+                 stateMsgEL2.classList.add("hidethis"); 
+              }  
+              if (!bValidZipCode) {
+                 zipMsgID.classList.remove("hidethis");     
+              }else{
+                 zipMsgID.classList.add("hidethis"); 
+              }  
+              if (!bValidPhoneNumber) {
+                 phoneMsgID.classList.remove("hidethis");     
+              }else{
+                 phoneMsgID.classList.add("hidethis"); 
+              } 
+              if (!bValidEmailAddr) {
+                 emailMsgID.classList.remove("hidethis");     
+              }else{
+                 emailMsgID.classList.add("hidethis"); 
+              }  
+            }//else 
+            return false;
+        }//func        
+            
+        function verifyBillingForm(){
+           //validate the name 
+           var bValidName = validateName(nameBillEL.value);
+           //validate the state
+           var bValidState = validateState(stateBillEL.value);
+           //validate the zipcode
+           var bBillValidZipCode = false;
+           bBillValidZipCode = isValidUSZip(billZipCodeID.value);       
+          //validate credit card
+          var bValidCredCardNum = false;
+          if (ccNumberID.value != "") { 
+             bValidCredCardNum = validCreditCardNo(ccNumberID.value); 
+          }   
+          
+          if (   ( bValidName ) 
+              //&& (bOptionSelectionMade) 
+              && (billStreetID.value.length  > 0 ) 
+              && (billAptNoID.value.length   > 0 )  
+              && (billCityID.value.length    > 0 ) 
+              && ( bValidState ) 
+              && ( bBillValidZipCode )
+              && ( bValidCredCardNum )
+              )    
+           {  
+              nameMsg2ID.classList.add("hidethis");  
+              streetMsg2ID.classList.add("hidethis"); 
+              aptNoMsg2ID.classList.add("hidethis");  
+              cityMsg2ID.classList.add("hidethis"); 
+              stateMsg2ID.classList.add("hidethis"); 
+              zipMsg2ID.classList.add("hidethis");
+              ccMsgID.classList.add("hidethis"); 
+              //window.alert("Billing Form validated");   
+           }else{ //missing some values
+              //window.alert("Billing Form NOT validated");
+              if (!bValidName) {
+                 nameMsg2ID.classList.remove("hidethis");
+              }else{ 
+                 nameMsg2ID.classList.add("hidethis"); 
+              } 
+              if (billStreetID.value.length < 1) {
+                 streetMsg2ID.classList.remove("hidethis");     
+              }else{
+                 streetMsg2ID.classList.add("hidethis"); 
+              }     
+              if (billAptNoID.value.length < 1) {
+                  aptnoMsg2ID.classList.remove("hidethis");
+              }else{ 
+                  aptnoMsg2ID.classList.add("hidethis"); 
+              } 
+              if (billCityID.value.length < 1) {
+                 cityMsg2ID.classList.remove("hidethis");    
+              }else{
+                 cityMsg2ID.classList.add("hidethis"); 
+              } 
+              if (!bValidState) { 
+                 stateMsg2ID.classList.remove("hidethis"); 
+              }else{    
+                 stateMsg2ID.classList.add("hidethis"); 
+              } 
+              if (!bBillValidZipCode) {
+                 zipMsg2ID.classList.remove("hidethis");     
+              }else{
+                 zipMsg2ID.classList.add("hidethis"); 
+              } 
+              if (!bValidCredCardNum) {
+                 ccMsg2ID.classList.remove("hidethis");     
+              }else{
+                 ccMsg2ID.classList.add("hidethis"); 
+              } 
+            }//else 
+            return false;
+        }//func    
+                    
+    </script>     
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->  
+        
+    </body>
+</html>
